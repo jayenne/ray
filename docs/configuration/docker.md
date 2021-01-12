@@ -50,3 +50,12 @@ services:
     extra_hosts: # <-- this is required
       - "host.docker.internal:host-gateway" # <-- this is required
 ```
+
+
+On Lardock, you will need to add an 'extra_hosts' parameter to your container definitions in laradock/docker-compose.yml before restarting workspace.
+```
+extra_hosts: # <-- this is required 
+    - "dockerhost:${DOCKER_HOST_IP}" # <-- this already exists
+    - "host.docker.internal:host-gateway" # <-- this is required in addition
+
+```
